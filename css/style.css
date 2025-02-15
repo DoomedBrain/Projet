@@ -10,22 +10,28 @@ body {
   flex-direction: column;
 }
 section {
-  background-color: rgb(18, 159, 159);
-  display: flex;
   width: 100%;
 }
-.img-container {
+
+.categorie-container{
+  width: 80%;
   margin: 0 auto;
-  width: 50%;
-  background-color: brown;
-  display: grid;
-  gap: 10px;
-  grid-template-columns: repeat(3, 1fr);
+}
+
+.img-container {
+width: 100%;
+height: auto;
+margin: 0 auto;
+display: grid;
+grid-template-columns: repeat(auto-fill, 250px);
+max-width: 800px;
+gap: 10px;
+justify-content: center;
 }
 
 .img-2049,
 .img-Scott {
-  height: 360px;
+  height: 360px; 
   width: 250px;
   background-size: cover;
   background-repeat: no-repeat;
