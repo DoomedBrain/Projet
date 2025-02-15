@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100%;
+  font-family: "Poppins";
+  display: flex;
+  flex-direction: column;
+}
+section {
+  background-color: rgb(18, 159, 159);
+  display: flex;
+  width: 100%;
+}
+.img-container {
+  margin: 0 auto;
+  width: 50%;
+  background-color: brown;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.img-2049,
+.img-Scott {
+  height: 360px;
+  width: 250px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.img-2049 {
+  background-image: url("/public/2049.jpg");
+}
+.img-Scott {
+  background-image: url("/public/Scott.jpg");
+}
