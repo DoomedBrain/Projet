@@ -19,3 +19,7 @@ nav {
     width: 1px;
     background-color: black;
   }
+  a{
+    color: black;
+    text-decoration: none;
+  }
