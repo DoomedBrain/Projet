@@ -3,22 +3,30 @@ h2 {
   margin-left: 50px;
 }
 .p1 {
+  text-align: left; 
+  text-align: justify;
   margin-top: 30px;
   margin-left: 180px;
 }
 
 .p2 {
+  text-align: justify;
   margin-top: 60px;
   margin-left: 180px;
+  margin-right: 50px;
 }
 
 .p3 {
+  text-align: justify;
   margin-top: 60px;
   margin-left: 180px;
+  margin-right: 50px;
 }
 .img-Photo1 {
-  height: 2000px;
-  width: 3240px;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  height: 500px;
+  width: 780px;
   background-size: cover;
   background-repeat: no-repeat;
 }
