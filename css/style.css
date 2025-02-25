@@ -29,13 +29,19 @@ gap: 10px;
 justify-content: center;
 }
 
+.img-Où_Aller,
 .img-2049,
-.img-Scott {
+.img-Scott
+ {
   height: 360px; 
   width: 250px;
   background-size: cover;
   background-repeat: no-repeat;
-}
+} 
+.img-Où_Aller{
+  background-image: url("/public/Où_Aller.png");
+ }
+ 
 .img-2049 {
   background-image: url("/public/2049.jpg");
 }
