@@ -34,17 +34,17 @@
       
       </nav>
       <h2>MESSAGE ME!</h2>
-
-     <h2>Formulaire de Contact</h2>
+<div class="box">
+    
     <form id="contact-form">
-        <input type="first_name" id="first_name" placeholder="Prénom" required>
-        <input type="last_name" id="last_name" placeholder="Nom de famille" required>
         <input type="email" id="email" placeholder="Votre email" required>
-        <input type="subject" id="subject" placeholder="Objet du mail" required>
         <textarea id="message" rows="5" placeholder="Votre message" required></textarea>
         <button type="submit">Envoyer</button>
     </form>
+  </div>
+    <footer>
 
+    </footer>
     <script>
         emailjs.init("gm1bLOpZtfvgKjRk-");
 
@@ -52,6 +52,7 @@
             event.preventDefault();
 
             const params = {
+
                 email: document.getElementById("email").value,
                 message: document.getElementById("message").value
             };
@@ -65,6 +66,7 @@
                 console.error("Erreur EmailJS :", error);
             });
         });
+      
     </script>
 
   </body>
