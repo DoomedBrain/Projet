@@ -1,7 +1,75 @@
-footer {
-  background-color: rgb(251, 251, 251);
-  height: 50px;
-  width: 100%;
-  position: fixed;
-  bottom: 0;
+.site-footer {
+  background: #fbfbfb;
+  border-top: 1px solid #eaeaea;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.footer-inner {
+  width: min(95vw, 1200px);
+  margin: 0 auto;
+  padding: 14px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-left {
+  font-weight: 400;
+}
+
+/* --- changé ici --- */
+.footer-right {
+  display: flex;
+  align-items: center; /* centre les éléments entre eux */
+  gap: 12px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+/* Logo Instagram image */
+.insta-logo {
+  height: 32px; /* légèrement plus grand pour matcher le bouton */
+  width: auto;
+  display: block; /* évite l’effet inline qui décale */
+  transition: transform 0.15s ease;
+}
+
+.insta-logo:hover {
+  transform: scale(1.1);
+}
+
+.footer-cta {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 8px;
+  background: #111;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.85rem;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.footer-cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  background: #000;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .footer-inner {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+  .footer-right {
+    justify-content: center; /* centre bouton + logo */
+  }
 }

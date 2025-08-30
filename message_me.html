@@ -20,54 +20,101 @@
   </head>
   <body>
     <nav>
-        <div>
-          <h1>JULIEN MILLET</h1>
-          <h3>COMPOSER | SOUND DESIGNER</h3>
-        </div>
-        <ul>
-            <li><a href="/index.html">PROJECTS</a></li>
+      <div>
+        <h1>JULIEN MILLET</h1>
+        <h3>COMPOSER | SOUND DESIGNER</h3>
+      </div>
+      <ul>
+        <li><a href="/index.html">PROJECTS</a></li>
         <div class="trait"></div>
         <li><a href="/bio.html">BIO</a></li>
-        
         <div class="trait"></div>
         <li><a href="/message_me.html">MESSAGE ME</a></li>
-      
-      </nav>
-      <h2>MESSAGE ME!</h2>
-<div class="box">
-    
-    <form id="contact-form">
-        <input type="email" id="email" placeholder="Votre email" required>
-        <textarea id="message" rows="5" placeholder="Votre message" required></textarea>
-        <button type="submit">Envoyer</button>
-    </form>
-  </div>
-    <footer>
+      </ul>
+    </nav>
 
+    <h2>MESSAGE ME!</h2>
+    <div class="box">
+      <form id="contact-form">
+        <input type="email" id="email" placeholder="Votre email" required />
+        <input
+          type="email"
+          id="confirm-email"
+          placeholder="Confirmez votre email"
+          required
+        />
+        <textarea
+          id="message"
+          rows="5"
+          placeholder="Votre message"
+          required
+        ></textarea>
+        <button type="submit">Envoyer</button>
+      </form>
+    </div>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-left">
+          <span>© Julien Millet 2025 — Paris, France</span>
+        </div>
+        <div class="footer-right">
+          <a href="/message_me.html" class="footer-cta">Message me</a>
+          <div class="footer-links">
+            <a
+              href="https://www.instagram.com/millet.julien/"
+              target="_blank"
+              rel="noopener"
+              aria-label="Instagram"
+            >
+              <img
+                src="/public/insta-logo.webp"
+                alt="Instagram"
+                class="insta-logo"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
     </footer>
     <script>
-        emailjs.init("gm1bLOpZtfvgKjRk-");
+      emailjs.init("gm1bLOpZtfvgKjRk-");
 
-        document.getElementById("contact-form").addEventListener("submit", function(event) {
-            event.preventDefault();
+      document
+        .getElementById("contact-form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
 
-            const params = {
+          const email = document.getElementById("email").value.trim();
+          const confirmEmail = document
+            .getElementById("confirm-email")
+            .value.trim();
+          const message = document.getElementById("message").value.trim();
 
-                email: document.getElementById("email").value,
-                message: document.getElementById("message").value
-            };
+          if (!email.includes("@")) {
+            alert("Veuillez entrer une adresse email valide (il manque le @).");
+            return;
+          }
 
-            emailjs.send("service_z140uhj", "template_eepkiyt", params)
-            .then(response => {
-                alert("Message envoyé avec succès !");
-                console.log("Réponse EmailJS :", response);
-            }, function(error) {
-                alert("Erreur lors de l'envoi du message.");
-                console.error("Erreur EmailJS :", error);
-            });
+          if (email !== confirmEmail) {
+            alert("Les deux adresses email ne correspondent pas.");
+            return;
+          }
+
+          const params = { email, message };
+
+          emailjs.send("service_z140uhj", "template_eepkiyt", params).then(
+            (response) => {
+              alert("Message envoyé avec succès !");
+              console.log("Réponse EmailJS :", response);
+              document.getElementById("contact-form").reset();
+            },
+            (error) => {
+              alert("Erreur lors de l'envoi du message.");
+              console.error("Erreur EmailJS :", error);
+            }
+          );
         });
-      
     </script>
-
   </body>
 </html>

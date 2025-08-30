@@ -3,14 +3,22 @@
   padding: 0;
   box-sizing: border-box;
 }
-body {
+
+/* important pour le footer collé en bas */
+html {
   height: 100%;
-  font-family: "Poppins";
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
   display: flex;
   flex-direction: column;
 }
+
 section {
   width: 100%;
+  flex: 1; /* pousse le footer en bas si peu de contenu */
 }
 
 .categorie-container {
@@ -37,6 +45,7 @@ section {
   background-size: cover;
   background-repeat: no-repeat;
 }
+
 .img-Où_Aller {
   background-image: url("/public/Où_Aller.png");
 }
@@ -44,6 +53,83 @@ section {
 .img-2049 {
   background-image: url("/public/2049.jpg");
 }
+
 .img-Scott {
   background-image: url("/public/Scott.jpg");
+}
+
+/* === FOOTER === */
+.site-footer {
+  background: #fbfbfb;
+  border-top: 1px solid #eaeaea;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.9rem;
+  color: #444;
+  margin-top: auto; /* colle le footer en bas */
+}
+
+.footer-inner {
+  width: min(95vw, 1200px);
+  margin: 0 auto;
+  padding: 14px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-left {
+  font-weight: 400;
+}
+
+.footer-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.insta-logo {
+  height: 32px;
+  width: auto;
+  display: block;
+  transition: transform 0.15s ease;
+}
+
+.insta-logo:hover {
+  transform: scale(1.1);
+}
+
+.footer-cta {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 8px;
+  background: #111;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.85rem;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.footer-cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  background: #000;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .footer-inner {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+  .footer-right {
+    justify-content: center;
+  }
 }
