@@ -1,18 +1,24 @@
+/* ====== styles existants ====== */
 nav {
   width: 100vw;
   background-color: rgb(251, 251, 251);
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
+  align-items: center; /* pour centrer verticalement */
+  box-sizing: border-box;
 }
 h3 {
   color: rgb(148, 147, 147);
+  margin: 0;
 }
 ul {
   margin: auto 0;
   display: flex;
   list-style: none;
   gap: 40px;
+  padding: 0;
+  align-items: center;
 }
 .trait {
   height: 23px;
@@ -22,4 +28,102 @@ ul {
 a {
   color: black;
   text-decoration: none;
+}
+
+/* ====== burger (caché en desktop) ====== */
+.nav-toggle {
+  display: none;
+}
+.nav-burger {
+  display: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  -webkit-tap-highlight-color: transparent;
+}
+.nav-burger span {
+  display: block;
+  width: 26px;
+  height: 2px;
+  background: black;
+  margin: 6px 0;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+/* ====== responsive ====== */
+@media (max-width: 768px) {
+  nav {
+    position: relative;
+  }
+
+  /* montrer le burger, cacher le menu par défaut */
+  .nav-burger {
+    display: block;
+  }
+  ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: grid; /* pile verticalement */
+    gap: 0;
+    background: rgb(251, 251, 251);
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    transform-origin: top;
+    transform: scaleY(0);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+    z-index: 1;
+  }
+  ul li {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  }
+  ul li a {
+    display: block;
+    padding: 14px 20px;
+  }
+  ul .trait {
+    display: none;
+  } /* on masque le séparateur en mobile */
+
+  /* ouvrir le menu quand coché */
+  .nav-toggle:checked ~ ul {
+    transform: scaleY(1);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* animation burger -> croix */
+  .nav-toggle:checked + .nav-burger span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .nav-toggle:checked + .nav-burger span:nth-child(2) {
+    opacity: 0;
+  }
+  .nav-toggle:checked + .nav-burger span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  /* réduire l’encombrement des titres sur petits écrans */
+  h1 {
+    font-size: 1.05rem;
+    margin: 0;
+  }
+  h3 {
+    font-size: 0.8rem;
+    line-height: 1.2;
+  }
+
+  /* s'assurer que le titre/burger restent cliquables au-dessus du menu */
+  a[aria-label^="Accueil"],
+  .nav-burger {
+    z-index: 2;
+  }
+}
+
+/* focus visible pour accessibilité */
+.nav-burger:focus-visible {
+  outline: 2px solid #000;
+  outline-offset: 3px;
 }
