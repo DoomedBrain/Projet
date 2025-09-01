@@ -1,51 +1,53 @@
-.information {
-  display: flex;
-  justify-content: left;
-  justify-content: space-evenly;
-  margin-top: 150px;
+h2 {
+  margin: 30px auto; /* centré horizontalement */
+  text-align: center;
 }
-h2{
-  margin-left: 300px;
-}
-.box{
+
+.box {
   margin-top: 30px;
   width: 100%;
   display: flex;
-}
-form {
-  display: flex;
-  margin:auto;
-  flex-direction: column;
-  gap: 10px;
+  justify-content: center; /* centre le form */
 }
 
-input{
-  resize: none;
-  width: 800px;
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 800px; /* largeur max */
+}
+
+input,
+textarea,
+button {
+  width: 100%; /* occupe toute la largeur dispo */
   padding: 10px;
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
-textarea{
-  resize: none;
-  width: 800px;
-  height: 400px;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+
+textarea {
+  height: 200px; /* moins haut par défaut */
 }
+
 button {
   height: 50px;
-  width: 800px;
   background-color: #58575b;
   color: white;
-  padding: 10px;
   border: none;
-  border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.2s;
 }
+
 button:hover {
   background-color: #6f7983;
+}
+
+/* Responsive ajustements */
+@media (max-width: 600px) {
+  textarea {
+    height: 150px;
+  }
 }

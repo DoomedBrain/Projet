@@ -20,15 +20,37 @@
   </head>
   <body>
     <nav>
-      <div>
-        <h1>JULIEN MILLET</h1>
-        <h3>COMPOSER | SOUND DESIGNER</h3>
-      </div>
+      <a
+        href="/"
+        aria-label="Accueil — Julien Millet"
+        style="text-decoration: none; color: inherit"
+      >
+        <div>
+          <h1>JULIEN MILLET</h1>
+          <h3>COMPOSER | SOUND DESIGNER</h3>
+        </div>
+      </a>
+
+      <!-- Toggle mobile -->
+      <input
+        type="checkbox"
+        id="nav-toggle"
+        class="nav-toggle"
+        aria-hidden="true"
+      />
+      <label
+        for="nav-toggle"
+        class="nav-burger"
+        aria-label="Ouvrir/fermer le menu"
+      >
+        <span></span><span></span><span></span>
+      </label>
+
       <ul>
         <li><a href="/index.html">PROJECTS</a></li>
-        <div class="trait"></div>
+        <li class="trait" aria-hidden="true"></li>
         <li><a href="/bio.html">BIO</a></li>
-        <div class="trait"></div>
+        <li class="trait" aria-hidden="true"></li>
         <li><a href="/message_me.html">MESSAGE ME</a></li>
       </ul>
     </nav>

@@ -1,35 +1,39 @@
 .aboutMe {
   margin-top: 30px;
-  margin-left: 50px;
-}
-.p1 {
-  text-align: left;
-  text-align: justify;
-  margin-top: 30px;
-  margin-left: 180px;
+  text-align: center; /* centré */
 }
 
-.p2 {
-  text-align: justify;
-  margin-top: 60px;
-  margin-left: 180px;
-  margin-right: 50px;
-}
-
+.p1,
+.p2,
 .p3 {
   text-align: justify;
-  margin-top: 60px;
-  margin-left: 180px;
-  margin-right: 50px;
+  margin: 20px auto;
+  max-width: 800px; /* largeur max lisible */
+  padding: 0 20px; /* respirations sur petits écrans */
+  line-height: 1.6; /* meilleure lisibilité */
 }
+
+/* Image */
 .img-Photo1 {
-  margin-top: 60px;
-  margin-bottom: 60px;
+  margin: 40px auto;
   height: 500px;
-  width: 780px;
+  width: 100%;
+  max-width: 780px; /* largeur max sur grands écrans */
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 10px;
 }
-.img-Photo1 {
-  background-image: url("/public/Photo1.png");
+
+/* Responsive */
+@media (max-width: 768px) {
+  .img-Photo1 {
+    height: 300px; /* réduit sur tablettes */
+  }
+}
+
+@media (max-width: 480px) {
+  .img-Photo1 {
+    height: 200px; /* encore plus réduit sur mobile */
+  }
 }

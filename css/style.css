@@ -37,17 +37,18 @@ section {
   justify-content: center;
 }
 
-.img-Où_Aller,
+.img-where,
 .img-2049,
-.img-Scott {
+.img-Scott,
+.img-papa_denfer {
   height: 360px;
   width: 250px;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
-.img-Où_Aller {
-  background-image: url("/public/Où_Aller.png");
+.img-where {
+  background-image: url("/public/where.jpeg");
 }
 
 .img-2049 {
@@ -56,6 +57,10 @@ section {
 
 .img-Scott {
   background-image: url("/public/Scott.jpg");
+}
+
+.img-papa_denfer {
+  background-image: url("/public/papa_denfer.jpg");
 }
 
 /* === FOOTER === */
