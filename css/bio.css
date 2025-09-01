@@ -15,25 +15,34 @@
 
 /* Image */
 .img-Photo1 {
+  background-image: url("/public/Photo1.png");
   margin: 40px auto;
   height: 500px;
   width: 100%;
-  max-width: 780px; /* largeur max sur grands écrans */
+  max-width: 780px; /* par défaut */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   border-radius: 10px;
 }
 
+/* Quand l'écran est large → image plus grande */
+@media (min-width: 1200px) {
+  .img-Photo1 {
+    max-width: 1100px; /* ou même 100% pour occuper toute la largeur */
+    height: 650px; /* tu peux augmenter la hauteur aussi */
+  }
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .img-Photo1 {
-    height: 300px; /* réduit sur tablettes */
+    height: 300px;
   }
 }
 
 @media (max-width: 480px) {
   .img-Photo1 {
-    height: 200px; /* encore plus réduit sur mobile */
+    height: 200px;
   }
 }
