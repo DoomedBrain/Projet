@@ -8,60 +8,51 @@
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/nav.css" />
     <link rel="stylesheet" href="/css/footer.css" />
-    <link rel="stylesheet" href="/css/messag_me.css" />
+    <link rel="stylesheet" href="/css/project.css" />
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio — Julien Millet</title>
+    <title>2049 - Project</title>
   </head>
   <body>
     <nav>
-      <a
-        href="/"
-        aria-label="Accueil — Julien Millet"
-        style="text-decoration: none; color: inherit"
-      >
-        <div>
-          <h1>JULIEN MILLET</h1>
-          <h3>COMPOSER | SOUND DESIGNER</h3>
-        </div>
-      </a>
-
-      <!-- Toggle mobile -->
-      <input
-        type="checkbox"
-        id="nav-toggle"
-        class="nav-toggle"
-        aria-hidden="true"
-      />
-      <label
-        for="nav-toggle"
-        class="nav-burger"
-        aria-label="Ouvrir/fermer le menu"
-      >
-        <span></span><span></span><span></span>
-      </label>
-
+      <div>
+        <h1>JULIEN MILLET</h1>
+        <h3>COMPOSER | SOUND DESIGNER</h3>
+      </div>
       <ul>
         <li><a href="/index.html">PROJECTS</a></li>
-        <li class="trait" aria-hidden="true"></li>
+        <div class="trait"></div>
         <li><a href="/bio.html">BIO</a></li>
-        <li class="trait" aria-hidden="true"></li>
+        <div class="trait"></div>
         <li><a href="/message_me.html">MESSAGE ME</a></li>
       </ul>
     </nav>
 
-    <section>
-      <div class="categorie-container">
-        <h4>MOVIES</h4>
-        <div class="img-container">
-          <a
-            href="/projets/projet_papa_denfer.html"
-            class="img-papa_denfer"
-          ></a>
-          <a href="/projets/projet_where.html" class="img-where"></a>
-          <a href="/projets/projet_2049.html" class="img-2049"></a>
-          <a href="/projets/projet_scott.html" class="img-Scott"></a>
+    <section class="project-detail">
+      <div class="project-grid">
+        <!-- Colonne gauche -->
+        <div>
+          <h2 class="project-title">Papa d'Enfer</h2>
+          <div class="project-text">
+            <p>
+              Role: Composition
+
+              <br /><br />
+              Réalisation: Mohamed Diallo, Raphael Beaucé
+            </p>
+          </div>
+        </div>
+
+        <!-- Colonne droite -->
+        <div class="project-video">
+          <iframe
+            src="https://www.youtube.com/watch?v=nid_xxOrIDs"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
         </div>
       </div>
     </section>
