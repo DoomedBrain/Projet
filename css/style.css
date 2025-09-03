@@ -40,7 +40,8 @@ section {
 .img-where,
 .img-2049,
 .img-Scott,
-.img-papa_denfer {
+.img-papa_denfer,
+.img-beksinski {
   height: 360px;
   width: 250px;
   background-size: cover;
@@ -63,6 +64,9 @@ section {
   background-image: url("/public/papa_denfer.jpg");
 }
 
+.img-beksinski {
+  background-image: url("/public/beksinski.jpg");
+}
 /* === FOOTER === */
 .site-footer {
   background: #fbfbfb;
